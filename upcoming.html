@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Cricket Score - RANJI TROPHY ELITE 2024-25</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🏏Live Cricket Score</h1>
+    </header>
+
+    <main>
+        <div class="match-buttons">
+                <a href="index.html">Live Match</a>
+                <a href="recent.html">Recent Match</a>
+        </div>
+        <div class="match-container">
+            <h2 class="upcoming">Upcoming Matches</h2>
+
+            <div class="teams-and-status upcoming-teams-and-status">
+                <h4 class="date-container">
+                    <span class="date team">Match Date/Time: </span>Loading...
+                </h4>
+                <div class="matches">
+                    <details class="details upcoming-details">
+                        <summary class="team summary">
+                            <span class="team">Series: </span>
+                            <span class="series-name">Loading...</span>
+                            <span class="time"></span>
+                        </summary>
+                        <p><span class="team match-format">Format: </span>Loading...</p>
+                        <p><span class="team match-description">Description: </span>Loading...</p>
+                        <p><span class="team venue">Venue: </span>Loading...</p>
+                    </details>
+                    <div class="teams upcoming-teams">
+                        <div class="upcoming-team1">
+                            <p class="upcoming-team1-name team">Loading...</p>
+                        </div>
+
+                        <span class="vs">VS</span>
+
+                        <div class="upcoming-team2">
+                            <p class="upcoming-team2-name team">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <button id="refresh-button">Refresh</button> -->
+        </div>
+    </main>
+
+    <script src="upcoming.js"></script>
+</body>
+
+</html>

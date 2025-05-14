@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Cricket Score - RANJI TROPHY ELITE 2024-25</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🏏Live Cricket Score</h1>
+    </header>
+
+    <main>
+        <div class="match-buttons">
+                <a href="index.html">Live Match</a>
+                <a href="upcoming.html">Upcoming Match</a>
+        </div>
+        <div class="match-container">
+
+            <h2 class="recent">Recent Match</h2>
+            <div class="match-type-buttons">
+                <button class="all">All</button>
+                <button class="International">International</button>
+                <button class="league">League</button>
+                <button class="domestic">Domestic</button>
+                <button class="women">Women</button>
+            </div>
+
+            <div class="teams-and-status recent-teams-and-status">
+                <div class="series-name recent-series-name"><span class="team">Series: </span> Loading... </div>
+                
+
+                <div class="matches recent-matches">
+                    <details class="details recent-details">
+                        <summary class="team summary">
+                            <span class="team match-description"></span>
+                            <span class="city">Loading...</span>
+                            <span class="ground"></span>
+                        </summary>
+                        <p><span class="team date-and-time">Date & Time: </span>Loading...</p>
+                        <p><span class="team match-format">Format: </span>Loading...</p>
+                    </details>
+                    <div class="teams recent-teams">
+                        <div class="recent-team1">
+                            <p class="recent-team1-name team">Loading...</p><span> </span><span class="innings1-runs"></span><span class="team1-ampersand"> & </span><span class="innings2-runs"></span><span class="team1-hypen">-</span><span class="recent-team1-wickets"></span><span class="team1-parentheses"> &#40;</span><span class="recent-team1-overs"></span><span class="team1-ovs"> ovs</span><span class="team1-parentheses">&#41;</span>
+                        </div>
+                        
+                        <span class="vs">VS</span>
+                        
+                        <div class="recent-team2">
+                            <p class="recent-team2-name team">Loading...</p><span> </span><span class="innings1-runs"></span><span class="team2-ampersand"> & <span class="innings2-runs"></span></span><span class="team2-hypen">-</span><span class="recent-team2-wickets"></span><span class="team2-parentheses"> &#40;</span><span class="recent-team2-overs"></span><span class="team2-ovs"> ovs</span><span class="team2-parentheses">&#41;</span>
+                        </div>
+                    </div>
+                    <div class="recent-status match-status">Loading...</div>
+                </div>
+            </div>
+            <!-- <button id="refresh-button">Refresh</button> -->
+        </div>
+    </main>
+
+    <script src="recent.js"></script>
+</body>
+
+</html>

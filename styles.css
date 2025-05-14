@@ -1,0 +1,425 @@
+.roboto-flex-900 {
+    font-family: "Roboto Flex", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0,
+        "wdth" 100,
+        "GRAD" 0,
+        "XOPQ" 96,
+        "XTRA" 468,
+        "YOPQ" 79,
+        "YTAS" 750,
+        "YTDE" -203,
+        "YTFI" 738,
+        "YTLC" 514,
+        "YTUC" 712;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: teal;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+
+}
+
+.match-container {
+    margin: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    justify-self: center;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.match-container h2 {
+    font-size: 24px;
+    color: #565656;
+    margin: 10px;
+}
+
+.match-container p {
+    font-size: 18px;
+    color: #555;
+}
+
+.team {
+    font-weight: bold;
+    font-size: 18px;
+    color: teal !important;
+}
+
+.live .status {
+    margin: 0;
+}
+
+.score {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.current-status {
+    font-size: 16px;
+    color: #4CAF50 !important;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.teams {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.details {
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.summary {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: inherit;
+    padding: 2px 10px;
+    border-radius: 10px;
+}
+
+.summary:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.514);
+}
+
+.details span,
+.details p {
+    font-size: inherit;
+}
+
+.teams-and-status {
+    width: 100%;
+    justify-items: center;
+    display: grid;
+}
+
+.live-teams-and-status {
+    background-color: #DCDCDC;
+    border-radius: 50px 50px 10px 10px;
+    padding: 0 10px 10px 10px;
+}
+
+.teams div {
+    background-color: transparent;
+    padding: 0 15px 0 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 7px #0061d978 inset;
+    justify-items: center;
+}
+
+.live-teams div {
+    padding: 10px;
+}
+
+.vs {
+    align-content: center;
+    font-weight: bold;
+    font-size: 35px;
+    color: darkgray;
+}
+
+#team1,
+#team2 {
+    display: grid;
+    padding: 18px;
+}
+
+#team1-name,
+#team2-name {
+    justify-self: center;
+}
+
+#team1 p,
+#team2 p {
+    margin: 8px;
+}
+
+#refresh-button {
+    background-color: #0077ff;
+    border: none;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#refresh-button:hover {
+    box-shadow: 0 0 10px rgb(0, 140, 255);
+    padding: 6px;
+}
+
+.live-match {
+    flex-direction: column;
+    align-items: center;
+    background-color: #F5FFFA;
+    padding: 8px;
+}
+
+.live-teams {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.live-series-name {
+    margin: 10px 25px;
+}
+
+.match-title {
+    margin: 20px 10px 5px 10px;
+}
+
+.live-details {
+    margin: 0 10px 5px 10px;
+}
+
+.live-teams p {
+    margin: 0;
+}
+
+.score-container {
+    margin: 5px !important;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: rgba(18, 214, 0, 0.671);
+    display: inline-block;
+    border-radius: 50%;
+    animation: blink 3s infinite ease-in-out;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 7px rgb(255, 255, 255) inset;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+}
+
+
+
+/*Upcoming*/
+.upcoming-match-container {
+    cursor: pointer;
+    text-decoration: none;
+    transition: 200ms ease-in;
+}
+
+.upcoming-match-container:hover {
+    box-shadow: 0 0 10px black;
+}
+
+.upcoming-teams {
+    margin-bottom: 0px;
+}
+
+.date,
+.time {
+    font-size: 16px;
+    color: teal !important;
+    font-weight: bold;
+}
+
+.dateAndTime {
+    color: #696969;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.upcoming-details {
+    margin: 10px;
+}
+
+.upcoming-details p {
+    margin: 0;
+}
+
+.matches {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: mintcream;
+    width: 98%;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #7e7e7e7d;
+}
+
+.upcoming-matches {
+    padding: 10px 0;
+}
+
+.date-container {
+    margin: 10px 0 5px 0;
+    color: #5e5e5e;
+}
+
+.upcoming-teams-and-status {
+    width: 100%;
+    justify-items: center;
+    display: grid;
+    background-color: gainsboro;
+    padding: 0px 0 7px 0;
+    border-radius: 50px 50px 10px 10px;
+}
+
+.series-name {
+    color: darkolivegreen !important;
+}
+
+
+/*recent*/
+.recent-match-container {
+    cursor: pointer;
+    text-decoration: none;
+    transition: 200ms ease-in;
+}
+
+.recent-match-container:hover {
+    box-shadow: 0 0 10px black;
+}
+
+.match-type-buttons {
+    margin: 0 10px 10px 10px;
+}
+
+.match-type-buttons button {
+    border: 1px solid rgb(201, 201, 201);
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.match-type-buttons button:hover {
+    background-color: rgb(0, 162, 255);
+    color: white;
+    box-shadow: 0 0 8px rgba(0, 140, 255, 0.568);
+    border: 1px solid transparent;
+}
+
+.recent-teams p {
+    display: inline;
+}
+
+.recent-teams div {
+    padding: 15px;
+    margin: 0 10px;
+}
+
+.recent-teams-and-status {
+    width: 100%;
+    justify-items: center;
+    display: grid;
+    background-color: gainsboro;
+    padding: 0px 0 7px 0;
+    border-radius: 50px 50px 10px 10px;
+    margin-bottom: 10px;
+}
+
+.recent-series-name {
+    margin: 10px 0 5px 0;
+    color: #5e5e5e;
+    font-weight: bold;
+}
+
+.recent-matches {
+    padding: 10px 0;
+}
+
+.recent-teams {
+    margin-bottom: 0;
+}
+
+.recent-details {
+    font-size: 13px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* .recent-details summary,
+.match-description,
+.city,
+.ground {
+    color: dimgray !important;
+} */
+
+.recent-status {
+    margin: 5px 20px;
+    color: #ff0000;
+}
+
+.city,
+.ground {
+    color: #555;
+}
+
+/*Used in All pages*/
+.error-message {
+    color: red;
+    font-weight: bold;
+    padding: 1em;
+    background: #ffe6e6;
+    border: 1px solid #ff0000;
+    border-radius: 8px;
+}
+
+.match-buttons {
+    padding: 5px;
+    margin: 10px;
+    justify-content: center;
+    display: flex;
+}
+
+.match-buttons a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.144);
+    border-radius: 10px;
+    box-shadow: 0 0 5px #0000003d;
+    margin: 5px;
+}
+
+.match-buttons a:hover {
+    background-color: rgb(0, 162, 255);
+    color: white;
+    box-shadow: 0 0 8px rgba(0, 140, 255, 0.568);
+    border: 1px solid transparent;
+    transition: 80ms ease-in;
+}
+
+.notes {
+    color: #959595;
+    font-size: 22px;
+}

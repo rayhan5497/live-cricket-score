@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Cricket Score</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🏏Live Cricket Score</h1>
+    </header>
+
+    <main>
+        <div class="match-container">
+
+            <h2 class="live">Live Match <span class="dot"></span></h2>
+
+            <div class="teams-and-status live-teams-and-status">
+                <div class="team series-name live-series-name"><span>Series: </span>Loading...</div>
+
+                <div class="matches live-match">
+                    <h3 class="match-title">Loading...<span class="match-format"></span> </h3>
+
+                    <details class="details live-details">
+                        <summary class="team summary">
+                            <span class="match-status">Loading match status...</span>
+                        </summary>
+                        <p class="venue"><span class="team">Venue: </span>Loading...</p>
+                        <p class="date"><span class="team">Match Date: </span>Loading...</p>
+                        <p class="time"><span class="team">Match Time: </span>Loading...</p>
+                    </details>
+
+                    <div class="teams live-teams">
+                        <div class="team1">
+                            <p class="team1-name team">Loading...</p>
+                            <p class="score-container"><span class="score">Score:</span> <span
+                                    class="team1-score">Loading...</span></p>
+                            <p><span class="team1-status">Loading...</span></p>
+                        </div>
+
+                        <span class="vs">VS</span>
+
+                        <div class="team2">
+                            <p class="team2-name team">Loading...</p>
+                            <p class="score-container"><span class="score">Score:</span> <span
+                                    class="team2-score">Loading...</span></p>
+                            <p><span class="team2-status">Loading...</span></p>
+                        </div>
+                    </div>
+
+                    <p class="current-status">Loading...</p>
+                </div>
+            </div>
+
+            <!-- <button id="refresh-button">Refresh</button> -->
+        </div>
+
+
+
+
+        <a class="match-container upcoming-match-container" href="upcoming.html">
+            <h2 id="live-upcoming">Upcoming Match</h2>
+            <div class="upcoming-teams-and-status">
+
+                <h4 class="date-container">
+                    <span class="date team">Match Date/Time: </span>Loading...
+                </h4>
+
+                <div class="matches upcoming-matches">
+                    <details id="live-upcoming-summary" class="details roboto-flex-400">
+                        <summary class="team summary roboto-flex-fonts">
+                            <span class="team">Series: </span>
+                            <span class="series-name">Loading...</span>
+                            <span class="time"></span>
+                        </summary>
+                        <p><span class="team match-format">Format: </span>Loading...</p>
+                        <p><span class="team match-description">Description: </span>Loading...</p>
+                        <p><span class="team venue">Venue: </span>Loading...</p>
+                    </details>
+
+                    <div class="teams-and-status">
+
+                        <div class="teams">
+                            <div id="live-upcoming-team1">
+                                <p id="live-upcoming-team1-name" class="team">Loading...</p>
+                            </div>
+
+                            <span class="vs">VS</span>
+
+                            <div id="live-upcoming-team2">
+                                <p id="live-upcoming-team2-name" class="team">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <!-- <button id="refresh-button2">Refresh</button> -->
+
+        <a class="match-container recent-match-container" href="recent.html">
+            <h2 id="live-recent">Recent Match</h2>
+
+            <div class="teams-and-status recent-teams-and-status">
+                <div class="series-name recent-series-name"><span class="team">Series: </span> Loading... </div>
+                <div class="matches recent-matches">
+                    <details class="details recent-details">
+                        <summary class="team summary">
+                            <span class="team match-description"></span>
+                            <span class="city">Loading...</span>
+                            <span class="ground"></span>
+                        </summary>
+                        <p><span class="team date-and-time">Date & Time: </span>Loading...</p>
+                        <p><span class="team match-format">Format: </span>Loading...</p>
+                    </details>
+                    <div class="teams recent-teams">
+                        <div class="recent-team1">
+                            <p class="recent-team1-name team">Loading...</p><span> </span><span
+                                class="innings1-runs"></span><span class="team1-ampersand"> & </span><span
+                                class="innings2-runs"></span><span class="team1-hypen">-</span><span
+                                class="recent-team1-wickets"></span><span class="team1-parentheses"> &#40;</span><span
+                                class="recent-team1-overs"></span><span class="team1-ovs"> ovs</span><span
+                                class="team1-parentheses">&#41;</span>
+                        </div>
+
+                        <span class="vs">VS</span>
+
+                        <div class="recent-team2">
+                            <p class="recent-team2-name team">Loading...</p><span> </span><span
+                                class="innings1-runs"></span><span class="team2-ampersand"> & <span
+                                    class="innings2-runs"></span></span><span class="team2-hypen">-</span><span
+                                class="recent-team2-wickets"></span><span class="team2-parentheses"> &#40;</span><span
+                                class="recent-team2-overs"></span><span class="team2-ovs"> ovs</span><span
+                                class="team2-parentheses">&#41;</span>
+                        </div>
+                    </div>
+                    <div class="recent-status match-status">Loading...</div>
+                </div>
+            </div>
+        </a>
+        <!-- <button id="refresh-button3">Refresh</button> -->
+    </main>
+
+    <script src="live.js"></script>
+</body>
+
+</html>
