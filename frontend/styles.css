@@ -120,6 +120,7 @@ header {
     background-color: #DCDCDC;
     border-radius: 50px 50px 10px 10px;
     padding: 0 10px 10px 10px;
+    margin-bottom: 10px;
 }
 
 .teams div {
@@ -128,7 +129,20 @@ header {
     border-radius: 10px;
     box-shadow: 0 0 7px #0061d978 inset;
     justify-items: center;
+    /* animation: color 5s infinite ease-in-out; */
 }
+
+/* @keyframes color {
+    0% {
+        box-shadow: 0 0 7px #0061d978 inset;
+    }
+    50% {
+        box-shadow: 0 0 7px #07d90078 inset;
+    }
+    100% {
+        box-shadow: 0 0 7px #0061d978 inset;
+    }
+} */
 
 .live-teams div {
     padding: 10px;

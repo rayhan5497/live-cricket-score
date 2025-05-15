@@ -1,6 +1,6 @@
 ***REMOVED***
 
-const recentUrl = 'http://localhost:5000/api/recent';
+const recentUrl = 'https://live-cricket-score-f9hg.onrender.com/api/recent';
 const recentOptions = {
   method: 'GET',
 };

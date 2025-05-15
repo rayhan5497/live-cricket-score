@@ -1,12 +1,15 @@
-const url = 'http://localhost:5000/api/live';
+// const url = 'http://localhost:5000/api/live';
+const url = 'https://live-cricket-score-f9hg.onrender.com/api/live';
 const options = {
   method: 'GET',
 };
-const upcomingUrl = 'http://localhost:5000/api/upcoming';
+// const upcomingUrl = 'http://localhost:5000/api/upcoming';
+const upcomingUrl = 'https://live-cricket-score-f9hg.onrender.com/api/upcoming';
 const upcomingOptions = {
   method: 'GET',
 };
-const recentUrl = 'http://localhost:5000/api/recent';
+// const recentUrl = 'http://localhost:5000/api/recent';
+const recentUrl = 'https://live-cricket-score-f9hg.onrender.com/api/recent';
 const recentOptions = {
   method: 'GET',
 };
@@ -74,7 +77,8 @@ function updateUI(data) {
     matchContainer.lastElementChild.remove();
   }
 
-  if (liveSeries && liveSeries > 0) {
+  if (Array.isArray(liveSeries) && liveSeries.length > 0) {
+      console.log('liveseries', liveSeries);
     liveSeries.forEach((series) => {
       const teamsAndStatusCloned = teamsAndStatus.cloneNode(true);
 
@@ -551,16 +555,16 @@ function showErrorOnUI(message) {
   matchContainer.innerHTML = `<div class="error-message">${message}</div>`;
 }
 
-// document
-//   .getElementById('refresh-button')
-//   .addEventListener('click', fetchLiveScores);
-// document
-//   .getElementById('refresh-button2')
-//   .addEventListener('click', fetchUpcomingMatch);
-// document
-//   .getElementById('refresh-button3')
-//   .addEventListener('click', fetchRecentMatch);
+document
+  .getElementById('refresh-button')
+  .addEventListener('click', fetchLiveScores);
+document
+  .getElementById('refresh-button2')
+  .addEventListener('click', fetchUpcomingMatch);
+document
+  .getElementById('refresh-button3')
+  .addEventListener('click', fetchRecentMatch);
 
-fetchLiveScores();
-fetchUpcomingMatch();
-fetchRecentMatch();
+// fetchLiveScores();
+// fetchUpcomingMatch();
+// fetchRecentMatch();
