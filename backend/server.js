@@ -16,7 +16,7 @@ const allowedOrigins = [
 
 const corsOptions = {
   origin: (origin, callback) => {
-    if (!origin) return callback(new Error("CORS: Missing origin"));
+    if (!origin) return callback(null, true);
 
     if (allowedOrigins.includes(origin)) {
       callback(null, true);
