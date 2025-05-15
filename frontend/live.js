@@ -78,7 +78,7 @@ function updateUI(data) {
   }
 
   if (Array.isArray(liveSeries) && liveSeries.length > 0) {
-      console.log('liveseries', liveSeries);
+    console.log('liveseries', liveSeries);
     liveSeries.forEach((series) => {
       const teamsAndStatusCloned = teamsAndStatus.cloneNode(true);
 
@@ -563,7 +563,15 @@ function showErrorOnUI(message) {
 // document
 //   .getElementById('refresh-button3')
 //   .addEventListener('click', fetchRecentMatch);
-
 fetchLiveScores();
 fetchUpcomingMatch();
 fetchRecentMatch();
+
+setInterval(() => {
+  fetchLiveScores();
+}, 60 * 1000);
+
+setInterval(() => {
+  fetchUpcomingMatch();
+  fetchRecentMatch();
+}, 3 * 60 * 60 * 1000);
