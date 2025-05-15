@@ -28,6 +28,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+app.set('trust proxy', 1); 
+
 /** Rate Limiters **/
 const dailyLimiter = rateLimit({
   windowMs: 24 * 60 * 60 * 1000, // 24 hours
