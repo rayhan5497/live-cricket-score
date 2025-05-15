@@ -1,4 +1,4 @@
-// const url = 'http://localhost:5000/api/live';
+// const url = 'http://localhost:5000/api/live'; //for development
 const url = 'https://live-cricket-score-f9hg.onrender.com/api/live';
 const options = {
   method: 'GET',
@@ -514,11 +514,10 @@ function updateRecentUI(data) {
   }
 }
 
+// Sort in descending order and get the most recent first
 function getRecentDate(timestamps) {
-  // Sort in descending order (most recent first)
   timestamps.sort((a, b) => b - a);
 
-  // Get the most recent one
   const mostRecent = timestamps[0];
   return mostRecent;
 }
