@@ -565,6 +565,6 @@ function showErrorOnUI(message) {
 //   .getElementById('refresh-button3')
 //   .addEventListener('click', fetchRecentMatch);
 
-fetchLiveScores();
-fetchUpcomingMatch();
-fetchRecentMatch();
+// fetchLiveScores();
+// fetchUpcomingMatch();
+// fetchRecentMatch();
