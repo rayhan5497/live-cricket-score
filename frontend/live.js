@@ -555,16 +555,16 @@ function showErrorOnUI(message) {
   matchContainer.innerHTML = `<div class="error-message">${message}</div>`;
 }
 
-document
-  .getElementById('refresh-button')
-  .addEventListener('click', fetchLiveScores);
-document
-  .getElementById('refresh-button2')
-  .addEventListener('click', fetchUpcomingMatch);
-document
-  .getElementById('refresh-button3')
-  .addEventListener('click', fetchRecentMatch);
+// document
+//   .getElementById('refresh-button')
+//   .addEventListener('click', fetchLiveScores);
+// document
+//   .getElementById('refresh-button2')
+//   .addEventListener('click', fetchUpcomingMatch);
+// document
+//   .getElementById('refresh-button3')
+//   .addEventListener('click', fetchRecentMatch);
 
-// fetchLiveScores();
-// fetchUpcomingMatch();
-// fetchRecentMatch();
+fetchLiveScores();
+fetchUpcomingMatch();
+fetchRecentMatch();

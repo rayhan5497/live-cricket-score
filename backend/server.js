@@ -10,7 +10,23 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+const allowedOrigins = [
+  "https://live-cricket-score-five.vercel.app",
+];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (!origin) return callback(new Error("CORS: Missing origin"));
+
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("CORS: Not allowed by policy"));
+    }
+  }
+};
+
+app.use(cors(corsOptions));
 
 /** Rate Limiters **/
 const dailyLimiter = rateLimit({
