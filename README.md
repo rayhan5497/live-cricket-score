@@ -61,3 +61,6 @@ To protect API keys and handle rate limiting, a custom Express proxy server is d
 | `/api/live`    | 1 request / minute |
 | `/api/upcoming`| 8 requests / day   |
 | `/api/recent`  | 8 requests / day   |
+
+### 🧑‍💻 Author
+Made with ❤️ by [Rayhan](https://github.com/rayhan5497)
