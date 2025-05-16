@@ -2,6 +2,10 @@
 
 A fast, minimal frontend web app that displays **real-time cricket match scores**, upcoming fixtures, and recently concluded matches using data from public cricket APIs.
 
+## 📸 Screenshot
+
+![Live Cricket Score App Screenshot](public/screenshot.png)
+
 ## 🔗 Live Site
 
 [Live Demo](https://live-cricket-score-five.vercel.app)
@@ -57,11 +61,3 @@ To protect API keys and handle rate limiting, a custom Express proxy server is d
 | `/api/live`    | 1 request / minute |
 | `/api/upcoming`| 8 requests / day   |
 | `/api/recent`  | 8 requests / day   |
-
-## 🧰 Setup Instructions
-
-### Clone this repo
-
-```bash
-git clone https://github.com/your-username/live-cricket-score.git
-cd live-cricket-score
