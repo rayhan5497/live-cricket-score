@@ -17,6 +17,12 @@ const recentOptions = {
 let lastUpdated = 0;
 let cachedResponse = null;
 
+const matchContainer = document.querySelector('.match-container');
+const matchContainerChildNodes = [];
+matchContainer.childNodes.forEach((node) => {
+  matchContainerChildNodes.push(node.cloneNode(true));
+});
+
 async function fetchLiveScores() {
   const currentTime = Date.now();
 
@@ -42,8 +48,14 @@ async function fetchLiveScores() {
     localStorage.setItem('liveScoresCache', JSON.stringify(data));
     localStorage.setItem('lastUpdated', currentTime.toString());
 
-    console.log('fetched new data');
-    console.log(data);
+    console.log('fetched new data', data);
+    const errorMessage = matchContainer.querySelector('.error-message');
+    if (errorMessage) {
+      errorMessage.remove();
+      matchContainerChildNodes.forEach((node) => {
+        matchContainer.appendChild(node);
+      });
+    }
     updateUI(data);
   } catch (error) {
     console.error(
@@ -57,6 +69,13 @@ async function fetchLiveScores() {
     if (cached && cachedTime && currentTime - cachedTime < 60000) {
       console.warn('Using cached localStorage data');
       updateUI(JSON.parse(cached));
+      const errorMessage = matchContainer.querySelector('.error-message');
+      if (errorMessage) {
+        errorMessage.remove();
+        matchContainerChildNodes.forEach((node) => {
+          matchContainer.appendChild(node);
+        });
+      }
     } else {
       console.error('No valid cache found');
       showErrorOnUI('API QUOTA ENDS');
