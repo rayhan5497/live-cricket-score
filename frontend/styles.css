@@ -30,7 +30,11 @@ header {
     padding: 10px;
     text-align: center;
     font-size: 20px;
+    box-shadow: 0 0 10px black;
+}
 
+header h1 {
+    text-shadow: 0 0 10px #00ffc7;
 }
 
 .match-container {
@@ -38,7 +42,7 @@ header {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 2px #000000;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,9 +73,24 @@ header {
     margin: 0;
 }
 
+.match-status {
+    color: #4CAF50;
+
+}
+
+.team-name,
+.team-score {
+    margin: auto;
+}
+
 .score {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: bold !important;
+}
+
+.team-score span {
+    font-weight: normal;
+    color: #555;
 }
 
 .current-status {
@@ -127,7 +146,7 @@ header {
     background-color: transparent;
     padding: 0 15px 0 15px;
     border-radius: 10px;
-    box-shadow: 0 0 7px #0061d978 inset;
+    box-shadow: 0 0 7px #008080eb inset, 0 0 10px #00808069;
     justify-items: center;
     /* animation: color 5s infinite ease-in-out; */
 }
@@ -202,10 +221,17 @@ header {
 
 .match-title {
     margin: 20px 10px 5px 10px;
+    color: teal;
 }
 
 .live-details {
     margin: 0 10px 5px 10px;
+}
+
+.live-details>.date,
+.live-details>.time {
+    color: #555 !important;
+    font-weight: normal;
 }
 
 .live-teams p {
@@ -292,8 +318,9 @@ header {
 }
 
 .date-container {
-    margin: 10px 0 5px 0;
+    margin: 10px 25px;
     color: #5e5e5e;
+    font-size: 18px;
 }
 
 .upcoming-teams-and-status {
@@ -360,9 +387,10 @@ header {
 }
 
 .recent-series-name {
-    margin: 10px 0 5px 0;
-    color: #5e5e5e;
     font-weight: bold;
+    margin: 10px 25px;
+    color: #5e5e5e;
+    font-size: 18px;
 }
 
 .recent-matches {
@@ -388,7 +416,7 @@ header {
 } */
 
 .recent-status {
-    margin: 5px 20px;
+    margin: 15px 20px 5px 20px;
     color: #ff0000;
 }
 

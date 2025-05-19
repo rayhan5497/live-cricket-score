@@ -1,4 +1,5 @@
-const recentUrl = 'https://live-cricket-score-f9hg.onrender.com/api/recent';
+const recentUrl = 'http://localhost:5000/api/recent';
+// const recentUrl = 'https://live-cricket-score-f9hg.onrender.com/api/recent';
 const recentOptions = {
   method: 'GET',
 };
@@ -59,8 +60,8 @@ function updateUI(data) {
   const teamsAndStatusCloned = teamsAndStatus.cloneNode(true);
   const firstChild = matchContainer.firstElementChild;
   const nextElementSibling = firstChild.nextElementSibling;
-  const details = document.querySelector('details');
-  const detailsCloned = details.cloneNode(true);
+  // const details = document.querySelector('details');
+  // const detailsCloned = details.cloneNode(true);
 
   while (
     matchContainer.lastElementChild &&

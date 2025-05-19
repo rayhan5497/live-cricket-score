@@ -27,8 +27,11 @@ async function fetchLiveScores() {
   const currentTime = Date.now();
 
   if (cachedResponse && currentTime - lastUpdated < 60000) {
-    console.log('using cached data (client side)');
+    console.log(
+      'requested before 1 minute: using live cached data (client side)'
+    );
     updateUI(cachedResponse);
+    removeErrorOnUI('.error-message');
     return;
   }
 
@@ -37,7 +40,7 @@ async function fetchLiveScores() {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData.error || 'Server error');
+      throw new Error(errorData.error, errorData.status || 'Server error');
     }
 
     const data = await response.json();
@@ -48,37 +51,23 @@ async function fetchLiveScores() {
     localStorage.setItem('liveScoresCache', JSON.stringify(data));
     localStorage.setItem('lastUpdated', currentTime.toString());
 
-    console.log('fetched new data', data);
-    const errorMessage = matchContainer.querySelector('.error-message');
-    if (errorMessage) {
-      errorMessage.remove();
-      matchContainerChildNodes.forEach((node) => {
-        matchContainer.appendChild(node);
-      });
-    }
+    removeErrorOnUI('.error-message');
     updateUI(data);
+
+    console.log('Trying to fetch new data:', data);
   } catch (error) {
-    console.error(
-      'Error fetching data from API. trying local storage...:',
-      error
-    );
+    console.error('Error fetching live data from API. trying cache:', error);
 
     const cached = localStorage.getItem('liveScoresCache');
     const cachedTime = localStorage.getItem('lastUpdated');
 
     if (cached && cachedTime && currentTime - cachedTime < 60000) {
-      console.warn('Using cached localStorage data');
+      console.log('Using live cached data');
       updateUI(JSON.parse(cached));
-      const errorMessage = matchContainer.querySelector('.error-message');
-      if (errorMessage) {
-        errorMessage.remove();
-        matchContainerChildNodes.forEach((node) => {
-          matchContainer.appendChild(node);
-        });
-      }
+      removeErrorOnUI('.error-message');
     } else {
       console.error('No valid cache found');
-      showErrorOnUI('API QUOTA ENDS');
+      showErrorOnUI('Failed to load Live Match, Try Again...');
     }
   }
 }
@@ -88,9 +77,12 @@ function updateUI(data) {
   const liveSeries = data?.response;
 
   const matchContainer = document.querySelector('.match-container');
+  console.log('matchcontainer', matchContainer);
 
   const teamsAndStatus = matchContainer.querySelector('.teams-and-status');
-  teamsAndStatus.remove();
+  if (teamsAndStatus) {
+    teamsAndStatus.remove();
+  }
 
   while (matchContainer?.children.length > 1) {
     matchContainer.lastElementChild.remove();
@@ -153,15 +145,12 @@ function updateUI(data) {
 
           teamsAndStatusCloned.appendChild(liveMatchCloned);
           matchContainer.appendChild(teamsAndStatusCloned);
-          console.log('fetched And updated');
+          console.log('UI has updated with data');
         });
       }
     });
   } else {
-    const h2 = document.createElement('h3');
-    h2.classList.add('notes');
-    matchContainer.appendChild(h2);
-    h2.innerHTML = 'No Live Match Right Now!';
+    showErrorOnUI('No Live Match Right Now!');
   }
 }
 
@@ -214,7 +203,7 @@ async function fetchUpcomingMatch() {
       console.log(upcomingCachedResponse);
     } else {
       console.error('No valid cache found');
-      showErrorOnUI('API QUOTA ENDS');
+      showErrorOnUI('Failed to load Upcoming Match, Try Again...');
     }
   }
 }
@@ -335,7 +324,7 @@ async function fetchRecentMatch() {
       updateRecentUI(JSON.parse(cached));
     } else {
       console.error('No valid cache found');
-      showErrorOnUI('API QUOTA ENDS');
+      showErrorOnUI('Failed to load Recent Match, Try Again...');
     }
   }
 }
@@ -541,11 +530,6 @@ function getRecentDate(timestamps) {
   return mostRecent;
 }
 
-function showErrorOnUI(message) {
-  const matchContainer = document.querySelector('.match-container');
-  matchContainer.innerHTML = `<div class="error-message">${message}</div>`;
-}
-
 function convertToLocalTime(timestamp) {
   if (typeof timestamp === 'string') {
     timestamp = Number(timestamp);
@@ -571,6 +555,17 @@ function convertToLocalTime(timestamp) {
 function showErrorOnUI(message) {
   const matchContainer = document.querySelector('.match-container');
   matchContainer.innerHTML = `<div class="error-message">${message}</div>`;
+}
+
+function removeErrorOnUI(message) {
+  const matchContainer = document.querySelector('.match-container');
+  const errorMessage = matchContainer.querySelector(message);
+  if (errorMessage) {
+    errorMessage.remove();
+    matchContainerChildNodes.forEach((node) => {
+      matchContainer.appendChild(node);
+    });
+  }
 }
 
 // document
