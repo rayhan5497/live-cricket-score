@@ -1,5 +1,5 @@
-const upcomingUrl = 'http://localhost:5000/api/upcoming';
-// const upcomingUrl = 'https://live-cricket-score-f9hg.onrender.com/api/upcoming';
+// const upcomingUrl = 'http://localhost:5000/api/upcoming';
+const upcomingUrl = 'https://live-cricket-score-f9hg.onrender.com/api/upcoming';
 const upcomingOptions = {
   method: 'GET',
 };
